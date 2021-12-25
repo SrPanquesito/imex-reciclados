@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iMex Reciclados</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="keywords" content="iMex Reciclados, Reciclaje, Baja California, Tijuana, PET, Cardboard, Paper, Periodico, Aluminio, Plastic, Mexico, México">
+    <meta name="author" content="Luis Diaz Reynoso">
+    <meta name="og:site_name" content="iMex Reciclados">
+    <meta name="og:title" content="Welcome to iMex Reciclados">
+    <meta name="og:description" content="">
+    <meta name="og:image" content="https://www.imexreciclados.com/img/imex-logo.png">
     <link href="styles.css" rel="stylesheet">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -13,7 +20,7 @@
     <!-- Header / Navbar -->
     <header class="fixed top-0 w-full z-20 bg-white-rgb border-b-2 border-imex-blue">
         <nav class="container mx-auto flex items-center justify-between py-4 text-sm">
-            <img class="cursor-pointer w-1/2 sm:w-1/6" src="./img/imex-logo.png" alt="">
+            <img class="cursor-pointer w-1/2 sm:w-1/6" src="./img/imex-logo.png" onclick="scrollAction('home')" alt="">
             <div class="hidden sm:flex flex-1 items-center sm:w-5/6 text-slate-500">
                 <div class="w-1/2 flex flex-row justify-center"></div>
                 <ul class="w-1/2 flex flex-1 justify-around items-center">
@@ -25,10 +32,19 @@
                 </ul>
             </div>
             <div class="flex sm:hidden flex-1 justify-end">
-                <i class="text-2xl fas fa-bars"></i>
+                <i class="text-2xl fas fa-bars" onclick="openNav()"></i>
             </div>
         </nav>
     </header>
+
+    <!-- Mobile Sidebar -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" onclick="closeNav()" class="closebtn text-2xl text-slate-800 font-bold capitalize">&times;</a>
+        <a onclick="scrollAction('home');closeNav()" class="text-2xl text-slate-800 font-bold capitalize">Home</a>
+        <a onclick="scrollAction('materials');closeNav()" class="text-2xl text-slate-800 font-bold capitalize">Materials</a>
+        <a onclick="scrollAction('network');closeNav()" class="text-2xl text-slate-800 font-bold capitalize">Network</a>
+        <a onclick="scrollAction('contact');closeNav()" class="text-2xl text-slate-800 font-bold capitalize">Contact</a>
+    </div>
 
     <!-- Hero / Main Banner -->
     <section class="relative" id="home">
@@ -48,7 +64,7 @@
     <section class="relative bg-imex-blue" id="materials">
         <div class="container flex flex-col items-center py-24 gap-16">
             <div class="flex flex-col items-center gap-3">
-                <h2 class="text-3xl text-slate-800 font-bold capitalize">Materials we work with</h2>
+                <h2 class="text-3xl text-slate-800 font-bold capitalize text-center">Materials we work with</h2>
                 <div class="w-20 border-b-4 border-lime-600"></div>
             </div>
             <div class="flex flex-col sm:flex-row px-9 sm:px-24 gap-16 sm:gap-8">
@@ -95,7 +111,7 @@
     <section class="relative " id="network">
         <div class="container flex flex-col py-24 gap-16">
             <div class="flex flex-col items-center sm:items-baseline sm:pl-24 gap-3">
-                <h2 class="text-3xl text-slate-800 font-bold capitalize">Our Distribution Network</h2>
+                <h2 class="text-3xl text-slate-800 font-bold capitalize text-center">Our Distribution Network</h2>
                 <div class="w-20 border-b-4 border-lime-600"></div>
             </div>
             <div class="flex flex-col-reverse lg:flex-row items-start gap-16">
@@ -117,7 +133,7 @@
     </section>
 
     <!-- Contact Us / Send us a Message -->
-    <section class="relative" id="contact">
+    <section class="relative">
         <div class="bg-imex-blue">
             <div class="container flex flex-col sm:flex-row sm:px-24 overflow-hidden">
                 <!-- Section 1 -->
@@ -133,7 +149,7 @@
                     <span class="text-lime-600">Feel free to call us or send us a message -></span>
                 </div>
                 <!-- Section 2 -->
-                <div class="flex sm:w-1/2 flex-col justify-center items-baseline py-24 gap-9 sm:pl-36 z-10">
+                <div id="contact" class="flex sm:w-1/2 flex-col justify-center items-baseline py-24 gap-9 sm:pl-36 z-10">
                     <div class="flex flex-row gap-4 items-center">
                         <i class="text-2xl text-blue-200 fas fa-map-marker-alt"></i>
                         <h5 class="text-white font-semibold text-xl">Tijuana, Baja California. México.</h5>
@@ -182,6 +198,16 @@
                 top: offsetPosition,
                 behavior: "smooth"
             });
+        }
+
+        /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "100%";
+        }
+
+        /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
         }
     </script>
 </body>
