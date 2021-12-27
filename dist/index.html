@@ -29,7 +29,7 @@
                     <li class="cursor-pointer" onclick="scrollAction('network')"> <span lang="en">Network</span><span lang="es">Red de Distribución</span> </li>
                     <li class="cursor-pointer" onclick="scrollAction('contact')"> <span lang="en">Contact</span><span lang="es">Contáctanos</span> </li>
                     <div class="flex flex-col static">
-                        <div onclick="toggleLanguageMenu()" class="flex flex-row justify-center items-center bg-imex-blue rounded-full px-6 py-2 gap-3 cursor-pointer hover:bg-slate-400 hover:text-slate-800 active:scale-105 transition-all">
+                        <div onclick="toggleLanguageMenu()" class="flex flex-row justify-center items-center bg-imex-blue shadow rounded-full px-6 py-2 gap-3 cursor-pointer hover:bg-slate-400 hover:text-slate-800 active:scale-105 transition-all">
                             <img class="w-4" src="./img/us-flag.png" id="lang-active-flag" alt="">
                             <span id="lang-active-text">ENG</span>
                             <i class="fas fa-angle-down rotate-0 transition-all" id="lang-arrow"></i>
@@ -56,11 +56,11 @@
         <a onclick="scrollAction('network');closeNav()" class="text-2xl text-slate-800 font-bold capitalize"> <span lang="en">Network</span><span lang="es">Red de Distribución</span> </a>
         <a onclick="scrollAction('contact');closeNav()" class="text-2xl text-slate-800 font-bold capitalize"> <span lang="en">Contact</span><span lang="es">Contáctanos</span> </a>
         <div class="px-7 py-6 flex flex-row static gap-6">
-            <div onclick="changeLanguage('en');closeNav()" class="flex flex-row justify-center items-center bg-slate-400 text-slate-800 shadow-slate-500 shadow-md rounded-full px-6 py-2 gap-3 cursor-pointer hover:bg-slate-400 hover:text-slate-800 active:scale-105 transition-all">
+            <div onclick="changeLanguage('en');closeNav()" class="flex flex-row justify-center items-center bg-sky-100 text-slate-800 shadow-slate-500 shadow-md rounded-full px-6 py-2 gap-3 cursor-pointer hover:bg-slate-400 hover:text-slate-800 active:scale-105 transition-all">
                 <img class="w-4" src="./img/us-flag.png" alt="">
                 <span>ENG</span>
             </div>
-            <div onclick="changeLanguage('es');closeNav()" class="flex flex-row justify-center items-center bg-slate-400 text-slate-800 shadow-slate-500 shadow-md rounded-full px-6 py-2 gap-3 cursor-pointer hover:bg-slate-400 hover:text-slate-800 active:scale-105 transition-all">
+            <div onclick="changeLanguage('es');closeNav()" class="flex flex-row justify-center items-center bg-sky-100 text-slate-800 shadow-slate-500 shadow-md rounded-full px-6 py-2 gap-3 cursor-pointer hover:bg-slate-400 hover:text-slate-800 active:scale-105 transition-all">
                 <img class="w-4" src="./img/mex-flag.png" alt="">
                 <span>ESP</span>
             </div>
@@ -73,7 +73,10 @@
             <div class="flex flex-col sm:w-1/2 sm:pl-24 sm:pr-12 gap-9 items-center sm:items-baseline">
                 <h1 class="text-3xl sm:text-5xl text-slate-800 font-bold uppercase" lang="en">Green Recycling</h1>
                 <h1 class="text-3xl sm:text-5xl text-slate-800 font-bold uppercase" lang="es">Reciclado Ecológico</h1>
-                <span class="text-slate-400 text-center sm:text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eius fuga sequi perferendis, quaerat dignissimos, totam, velit repellendus impedit reprehenderit aperiam laboriosam. Optio omnis iusto maiores eos modi iste nostrum.</span>
+                <div class="text-slate-400 text-center sm:text-left">
+                    <span lang="en">Recycling made easy! We provide comprehensive yet simple recycling and waste reduction services that get real results. Our goal is to inspire through our clients the most professional recycling service out there in order to minimize our collective environmental impact as a society.</span>
+                    <span lang="es">¡Reciclar de forma fácil! Brindamos servicios integrales pero simples de reciclaje y reducción de desechos que obtienen resultados reales. Nuestro objetivo es inspirar a través de nuestros clientes el servicio de reciclaje más profesional que existe para minimizar el impacto ambiental que existe en el mundo.</span>
+                </div>
                 <button class="btn-imex-action" onclick="scrollAction('contact')">
                     <span lang="en">Send us a Message</span><span lang="es">Envíanos un Mensaje</span>
                 </button>
@@ -95,43 +98,55 @@
             </div>
             <div class="flex flex-col sm:flex-row px-9 sm:px-24 gap-16 sm:gap-8">
                 <!-- Card -->
-                <div class="flex flex-col bg-white shadow-md rounded-lg overflow-hidden">
+                <div class="flex flex-col sm:flex-1 bg-white shadow-md rounded-lg overflow-hidden">
                     <img class="w-full" src="./img/aluminium.png" alt="">
                     <div class="flex flex-col my-7 mx-5 gap-4">
                         <h3 class="text-lg sm:text-md text-slate-700 font-semibold">
                             <span lang="en">Aluminium</span><span lang="es">Aluminio</span>
                         </h3>
-                        <p class="text-sm text-slate-500 leading-7 sm:leading-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis placeat corrupti</p>
+                        <p class="text-sm text-slate-500 leading-7 sm:leading-6">
+                            <span lang="en">From aerosol cans, drink cans, and aluminum foil trays. Aluminum is used extensively in the construction, manufacturing, and consumer products industries, to make large and small items.</span>
+                            <span lang="es">Desde papel aluminio hasta latas de aerosol y de bebidas. El aluminio se utiliza ampliamente en las industrias de la construcción, la fabricación y los productos de consumo, para fabricar artículos grandes y pequeños.</span>
+                        </p>
                     </div>
                 </div>
                 <!-- Card -->
-                <div class="flex flex-col bg-white shadow-md rounded-lg overflow-hidden">
+                <div class="flex flex-col sm:flex-1 bg-white shadow-md rounded-lg overflow-hidden">
                     <img class="w-full" src="./img/plastic.png" alt="">
                     <div class="flex flex-col my-7 mx-5 gap-4">
                         <h3 class="text-lg sm:text-md text-slate-700 font-semibold">
                             <span lang="en">PET Plastics</span><span lang="es">Plásticos PET</span>
                         </h3>
-                        <p class="text-sm text-slate-500 leading-7 sm:leading-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis placeat corrupti</p>
+                        <p class="text-sm text-slate-500 leading-7 sm:leading-6">
+                            <span lang="en">A PET plastic bottle has many potential after life uses and its status as one of the most used plastic packaging materials in the world is due to its performance qualities and its highly recyclable nature.</span>
+                            <span lang="es">Una botella de plástico PET tiene muchas posibilidades de uso después de su vida útil y su estado como uno de los materiales de embalaje de plástico más utilizados en el mundo se debe a sus cualidades de rendimiento y su naturaleza altamente reciclable.</span>
+                        </p>
                     </div>
                 </div>
                 <!-- Card -->
-                <div class="flex flex-col bg-white shadow-md rounded-lg overflow-hidden">
+                <div class="flex flex-col sm:flex-1 bg-white shadow-md rounded-lg overflow-hidden">
                     <img class="w-full" src="./img/cardboard.png" alt="">
                     <div class="flex flex-col my-7 mx-5 gap-4">
                         <h3 class="text-lg sm:text-md text-slate-700 font-semibold">
                             <span lang="en">Cardboard</span><span lang="es">Cartón</span>
                         </h3>
-                        <p class="text-sm text-slate-500 leading-7 sm:leading-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis placeat corrupti</p>
+                        <p class="text-sm text-slate-500 leading-7 sm:leading-6">
+                            <span lang="en">From packaging boxes, egg cartons, shoe boxes, and cereal boxes. To conserve resources, reduce pollution, create jobs and save landfill space, cardboard recycling is essential.</span>
+                            <span lang="es">Desde cajas de empaque, cartones de huevos, cajas de zapatos y cajas de cereales. Para conservar recursos, reducir la contaminación, crear puestos de trabajo y ahorrar espacio en los vertederos, el reciclaje de cartón es fundamental.</span>
+                        </p>
                     </div>
                 </div>
                 <!-- Card -->
-                <div class="flex flex-col bg-white shadow-md rounded-lg overflow-hidden">
+                <div class="flex flex-col sm:flex-1 bg-white shadow-md rounded-lg overflow-hidden">
                     <img class="w-full" src="./img/paper.png" alt="">
                     <div class="flex flex-col my-7 mx-5 gap-4">
                         <h3 class="text-lg sm:text-md text-slate-700 font-semibold">
                             <span lang="en">Paper</span><span lang="es">Papel</span>
                         </h3>
-                        <p class="text-sm text-slate-500 leading-7 sm:leading-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis placeat corrupti</p>
+                        <p class="text-sm text-slate-500 leading-7 sm:leading-6">
+                            <span lang="en">One of the most demanded services among different businesses, as paper is the most recycled product in the world. Such scrap can be used in the production of new paper products and benefit the economy significantly.</span>
+                            <span lang="es">Uno de los servicios más demandados entre diferentes negocios, ya que el papel es el producto más reciclado del mundo. Esta chatarra se puede utilizar en la producción de nuevos productos de papel y beneficiar significativamente a la economía.</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -155,9 +170,16 @@
             <div class="flex flex-col-reverse lg:flex-row items-start gap-16">
                 <div class="flex flex-col sm:w-1/2 sm:px-24 items-center sm:items-baseline gap-16">
                     <p class="text-slate-400">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eius fuga sequi perferendis, quaerat dignissimos, totam, velit repellendus impedit reprehenderit aperiam laboriosam. Optio omnis iusto maiores eos modi iste nostrum.
-                    <br/><br/>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eius fuga sequi perferendis, quaerat dignissimos, totam, velit repellendus impedit reprehenderit aperiam laboriosam. Optio omnis iusto maiores eos modi iste nostrum.
+                        <span lang="en">
+                            We're dedicated to the buy and sale of recycling materials such as PET, cardboard and aluminum. We handle import and export shipments of such materials going through bi-national land shipments across the USA and México border and international maritime shipments all around the globe.
+                            <br/><br/>
+                            Our main focus is the recycling trade network that exists between China, USA and Mexico but we are open to do business in all Asia, America, Europe, Africa and Oceania.
+                        </span>
+                        <span lang="es">
+                            Somos una empresa que nos dedicamos a la compra y venta para materiales de reciclaje tales como PET, cartón y aluminio. Hacemos uso de envios terrestres de forma bi-nacional entre Estados Unidos y México y envios maritimos internacionales a través de todo el mundo.
+                            <br/><br/>
+                            Nuestro enfoque principal es la red comercial de reciclaje que existe entre China, EE. UU. Y México, pero estamos abiertos a hacer negocios en toda Asia, América, Europa, África y Oceanía.
+                        </span>
                     </p>
                     <button class="btn-imex-action" onclick="scrollAction('contact')">
                         <span lang="en">Send us a Message</span><span lang="es">Envíanos un Mensaje</span>
@@ -186,7 +208,8 @@
                     </div>
                     <img class="w-full" src="./img/contact.png" alt="">
                     <p class="text-slate-500 leading-7">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eius fuga sequi perferendis, quaerat dignissimos, totam, velit repellendus impedit reprehenderit aperiam laboriosam. Optio omnis iusto maiores eos modi iste nostrum.
+                        <span lang="en">Let's talk about business. If you need to import or export any of the materials we work with, feel free to send us an email, call us by phone or write us a message through our social networks.</span>
+                        <span lang="es">Hablemos de negocios. Si necesitas importar o exportar alguno de los materiales con los que trabajamos envíanos un correo, llámanos por teléfono o escríbenos un mensaje a través de nuestras redes sociales.</span>
                     </p>
                     <span lang="en" class="text-lime-600">Feel free to call us or send us a message -></span>
                     <span lang="es" class="text-lime-600">No dudes en llamarnos o enviarnos un mensaje -></span>
@@ -235,10 +258,6 @@
         // self executing function here
         (function() {
             var langEs = document.querySelectorAll('[lang="es"]');
-
-            // for(var i = 0; i < langEs.length; i++){
-            //     langEs[i].style.display = "none"; // depending on what you're doing
-            // }
 
             langEs.forEach(el => {
                 el.style.display = "none";
