@@ -5,7 +5,8 @@ module.exports = {
       colors: {
         "white": "#fff",
         "white-rgb": "rgb(255 255 255 / 98%)",
-        "imex-blue": "#eef5ff"
+        "imex-blue": "#eef5ff",
+        "imex-green": "#7db569"
       }
     },
     fontFamily: {
