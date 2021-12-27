@@ -24,11 +24,22 @@
             <div class="hidden sm:flex flex-1 items-center sm:w-5/6 text-slate-500">
                 <div class="w-1/2 flex flex-row justify-center"></div>
                 <ul class="w-1/2 flex flex-1 justify-around items-center">
-                    <li class="cursor-pointer" onclick="scrollAction('home')">Home</li>
-                    <li class="cursor-pointer" onclick="scrollAction('materials')">Materials</li>
-                    <li class="cursor-pointer" onclick="scrollAction('network')">Network</li>
-                    <li class="cursor-pointer" onclick="scrollAction('contact')">Contact</li>
-                    <button type="button" class="btn-imex-action">Language (Change style)</button>
+                    <li class="cursor-pointer" onclick="scrollAction('home')"> <span lang="en">Home</span><span lang="es">Inicio</span> </li>
+                    <li class="cursor-pointer" onclick="scrollAction('materials')"> <span lang="en">Materials</span><span lang="es">Materiales</span> </li>
+                    <li class="cursor-pointer" onclick="scrollAction('network')"> <span lang="en">Network</span><span lang="es">Red de Distribución</span> </li>
+                    <li class="cursor-pointer" onclick="scrollAction('contact')"> <span lang="en">Contact</span><span lang="es">Contáctanos</span> </li>
+                    <div class="flex flex-col static">
+                        <div onclick="toggleLanguageMenu()" class="flex flex-row justify-center items-center bg-imex-blue rounded-full px-6 py-2 gap-3 cursor-pointer hover:bg-slate-400 hover:text-slate-800 active:scale-105 transition-all">
+                            <img class="w-4" src="./img/us-flag.png" id="lang-active-flag" alt="">
+                            <span id="lang-active-text">ENG</span>
+                            <i class="fas fa-angle-down rotate-0 transition-all" id="lang-arrow"></i>
+                        </div>
+                        <div onclick="toggleLanguageButton()" id="lang-1" class="opacity-0 -z-10 flex absolute bottom-1/4 flex-row justify-center items-center rounded-full px-6 py-2 gap-3 cursor-pointer hover:bg-slate-400 hover:text-slate-800 transition-all">
+                            <img class="w-4" src="./img/mex-flag.png" id="lang-disabled-flag" alt="">
+                            <span id="lang-disabled-text">ESP</span>
+                            <i class="w-4"></i>
+                        </div>
+                    </div>
                 </ul>
             </div>
             <div class="flex sm:hidden flex-1 justify-end">
@@ -40,19 +51,32 @@
     <!-- Mobile Sidebar -->
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" onclick="closeNav()" class="closebtn text-2xl text-slate-800 font-bold capitalize">&times;</a>
-        <a onclick="scrollAction('home');closeNav()" class="text-2xl text-slate-800 font-bold capitalize">Home</a>
-        <a onclick="scrollAction('materials');closeNav()" class="text-2xl text-slate-800 font-bold capitalize">Materials</a>
-        <a onclick="scrollAction('network');closeNav()" class="text-2xl text-slate-800 font-bold capitalize">Network</a>
-        <a onclick="scrollAction('contact');closeNav()" class="text-2xl text-slate-800 font-bold capitalize">Contact</a>
+        <a onclick="scrollAction('home');closeNav()" class="text-2xl text-slate-800 font-bold capitalize"> <span lang="en">Home</span><span lang="es">Inicio</span> </a>
+        <a onclick="scrollAction('materials');closeNav()" class="text-2xl text-slate-800 font-bold capitalize"> <span lang="en">Materials</span><span lang="es">Materiales</span> </a>
+        <a onclick="scrollAction('network');closeNav()" class="text-2xl text-slate-800 font-bold capitalize"> <span lang="en">Network</span><span lang="es">Red de Distribución</span> </a>
+        <a onclick="scrollAction('contact');closeNav()" class="text-2xl text-slate-800 font-bold capitalize"> <span lang="en">Contact</span><span lang="es">Contáctanos</span> </a>
+        <div class="px-7 py-6 flex flex-row static gap-6">
+            <div onclick="changeLanguage('en');closeNav()" class="flex flex-row justify-center items-center bg-slate-400 text-slate-800 shadow-slate-500 shadow-md rounded-full px-6 py-2 gap-3 cursor-pointer hover:bg-slate-400 hover:text-slate-800 active:scale-105 transition-all">
+                <img class="w-4" src="./img/us-flag.png" alt="">
+                <span>ENG</span>
+            </div>
+            <div onclick="changeLanguage('es');closeNav()" class="flex flex-row justify-center items-center bg-slate-400 text-slate-800 shadow-slate-500 shadow-md rounded-full px-6 py-2 gap-3 cursor-pointer hover:bg-slate-400 hover:text-slate-800 active:scale-105 transition-all">
+                <img class="w-4" src="./img/mex-flag.png" alt="">
+                <span>ESP</span>
+            </div>
+        </div>
     </div>
 
     <!-- Hero / Main Banner -->
     <section class="relative" id="home">
         <div class="container flex flex-col-reverse lg:flex-row items-center gap-12 mt-48 mb-24">
-            <div class="flex flex-col sm:w-1/2 sm:px-24 gap-9 items-center sm:items-baseline">
-                <h1 class="text-3xl sm:text-5xl text-slate-800 font-bold uppercase">Green Recycling</h1>
+            <div class="flex flex-col sm:w-1/2 sm:pl-24 sm:pr-12 gap-9 items-center sm:items-baseline">
+                <h1 class="text-3xl sm:text-5xl text-slate-800 font-bold uppercase" lang="en">Green Recycling</h1>
+                <h1 class="text-3xl sm:text-5xl text-slate-800 font-bold uppercase" lang="es">Reciclado Ecológico</h1>
                 <span class="text-slate-400 text-center sm:text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eius fuga sequi perferendis, quaerat dignissimos, totam, velit repellendus impedit reprehenderit aperiam laboriosam. Optio omnis iusto maiores eos modi iste nostrum.</span>
-                <button class="btn-imex-action" onclick="scrollAction('contact')">Send us a Message</button>
+                <button class="btn-imex-action" onclick="scrollAction('contact')">
+                    <span lang="en">Send us a Message</span><span lang="es">Envíanos un Mensaje</span>
+                </button>
             </div>
             <div class="flex justify-start sm:w-1/2">
                 <img class="w-full sm:w-3/4" src="./img/main-1.png" alt="">
@@ -64,7 +88,9 @@
     <section class="relative bg-imex-blue" id="materials">
         <div class="container flex flex-col items-center py-24 gap-16">
             <div class="flex flex-col items-center gap-3">
-                <h2 class="text-3xl text-slate-800 font-bold capitalize text-center">Materials we work with</h2>
+                <h2 class="text-3xl text-slate-800 font-bold capitalize text-center">
+                    <span lang="en">Materials we work with</span><span lang="es">Materiales que trabajamos</span>
+                </h2>
                 <div class="w-20 border-b-4 border-lime-600"></div>
             </div>
             <div class="flex flex-col sm:flex-row px-9 sm:px-24 gap-16 sm:gap-8">
@@ -72,7 +98,9 @@
                 <div class="flex flex-col bg-white shadow-md rounded-lg overflow-hidden">
                     <img class="w-full" src="./img/aluminium.png" alt="">
                     <div class="flex flex-col my-7 mx-5 gap-4">
-                        <h3 class="text-lg sm:text-md text-slate-700 font-semibold">Aluminium</h3>
+                        <h3 class="text-lg sm:text-md text-slate-700 font-semibold">
+                            <span lang="en">Aluminium</span><span lang="es">Aluminio</span>
+                        </h3>
                         <p class="text-sm text-slate-500 leading-7 sm:leading-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis placeat corrupti</p>
                     </div>
                 </div>
@@ -80,7 +108,9 @@
                 <div class="flex flex-col bg-white shadow-md rounded-lg overflow-hidden">
                     <img class="w-full" src="./img/plastic.png" alt="">
                     <div class="flex flex-col my-7 mx-5 gap-4">
-                        <h3 class="text-lg sm:text-md text-slate-700 font-semibold">PET Plastics</h3>
+                        <h3 class="text-lg sm:text-md text-slate-700 font-semibold">
+                            <span lang="en">PET Plastics</span><span lang="es">Plásticos PET</span>
+                        </h3>
                         <p class="text-sm text-slate-500 leading-7 sm:leading-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis placeat corrupti</p>
                     </div>
                 </div>
@@ -88,7 +118,9 @@
                 <div class="flex flex-col bg-white shadow-md rounded-lg overflow-hidden">
                     <img class="w-full" src="./img/cardboard.png" alt="">
                     <div class="flex flex-col my-7 mx-5 gap-4">
-                        <h3 class="text-lg sm:text-md text-slate-700 font-semibold">Cardboard</h3>
+                        <h3 class="text-lg sm:text-md text-slate-700 font-semibold">
+                            <span lang="en">Cardboard</span><span lang="es">Cartón</span>
+                        </h3>
                         <p class="text-sm text-slate-500 leading-7 sm:leading-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis placeat corrupti</p>
                     </div>
                 </div>
@@ -96,13 +128,17 @@
                 <div class="flex flex-col bg-white shadow-md rounded-lg overflow-hidden">
                     <img class="w-full" src="./img/paper.png" alt="">
                     <div class="flex flex-col my-7 mx-5 gap-4">
-                        <h3 class="text-lg sm:text-md text-slate-700 font-semibold">Paper</h3>
+                        <h3 class="text-lg sm:text-md text-slate-700 font-semibold">
+                            <span lang="en">Paper</span><span lang="es">Papel</span>
+                        </h3>
                         <p class="text-sm text-slate-500 leading-7 sm:leading-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis placeat corrupti</p>
                     </div>
                 </div>
             </div>
             <div class="flex justify-center">
-                <button class="btn-imex-action" onclick="scrollAction('contact')">Send us a Message</button>
+                <button class="btn-imex-action" onclick="scrollAction('contact')">
+                    <span lang="en">Send us a Message</span><span lang="es">Envíanos un Mensaje</span>
+                </button>
             </div>
         </div>
     </section>
@@ -111,7 +147,9 @@
     <section class="relative " id="network">
         <div class="container flex flex-col py-24 gap-16">
             <div class="flex flex-col items-center sm:items-baseline sm:pl-24 gap-3">
-                <h2 class="text-3xl text-slate-800 font-bold capitalize text-center">Our Distribution Network</h2>
+                <h2 class="text-3xl text-slate-800 font-bold capitalize text-center">
+                    <span lang="en">Our Distribution Network</span><span lang="es">Nuestra Red de Distribución</span>
+                </h2>
                 <div class="w-20 border-b-4 border-lime-600"></div>
             </div>
             <div class="flex flex-col-reverse lg:flex-row items-start gap-16">
@@ -121,7 +159,9 @@
                     <br/><br/>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eius fuga sequi perferendis, quaerat dignissimos, totam, velit repellendus impedit reprehenderit aperiam laboriosam. Optio omnis iusto maiores eos modi iste nostrum.
                     </p>
-                    <button class="btn-imex-action" onclick="scrollAction('contact')">Send us a Message</button>
+                    <button class="btn-imex-action" onclick="scrollAction('contact')">
+                        <span lang="en">Send us a Message</span><span lang="es">Envíanos un Mensaje</span>
+                    </button>
                 </div>
                 <div class="flex justify-start sm:w-1/2">
                     <div class="mt-0 sm:-mt-16 sm:w-3/4 shadow-2xl rounded-xl overflow-hidden">
@@ -139,14 +179,17 @@
                 <!-- Section 1 -->
                 <div class="flex sm:w-1/2 flex-col py-24 gap-9 sm:pr-36">
                     <div class="flex flex-col items-center sm:items-baseline gap-3">
-                        <h2 class="text-3xl text-slate-800 font-bold capitalize">Contact us!</h2>
+                        <h2 class="text-3xl text-slate-800 font-bold capitalize">
+                            <span lang="en">Contact us!</span><span lang="es">Contáctanos!</span>
+                        </h2>
                         <div class="w-20 border-b-4 border-lime-600"></div>
                     </div>
                     <img class="w-full" src="./img/contact.png" alt="">
                     <p class="text-slate-500 leading-7">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eius fuga sequi perferendis, quaerat dignissimos, totam, velit repellendus impedit reprehenderit aperiam laboriosam. Optio omnis iusto maiores eos modi iste nostrum.
                     </p>
-                    <span class="text-lime-600">Feel free to call us or send us a message -></span>
+                    <span lang="en" class="text-lime-600">Feel free to call us or send us a message -></span>
+                    <span lang="es" class="text-lime-600">No dudes en llamarnos o enviarnos un mensaje -></span>
                 </div>
                 <!-- Section 2 -->
                 <div id="contact" class="flex sm:w-1/2 flex-col justify-center items-baseline py-24 gap-9 sm:pl-36 z-10">
@@ -167,7 +210,9 @@
                         </div>
                     </a>
                     <div class="flex flex-col pt-12">
-                        <h5 class="text-white font-medium italic text-lg">Follow us</h5>
+                        <h5 class="text-white font-medium italic text-lg">
+                            <span lang="en">Follow us</span><span lang="es">Síguenos en</span>
+                        </h5>
                         <div class="flex flex-row gap-6 sm:gap-9 items-center pt-6">
                             <img class="w-12 cursor-pointer" src="./img/fb-icon.png" alt="" srcset="">
                             <img class="w-12 cursor-pointer" src="./img/ig-icon.png" alt="" srcset="">
@@ -187,6 +232,19 @@
     </footer>
 
     <script>
+        // self executing function here
+        (function() {
+            var langEs = document.querySelectorAll('[lang="es"]');
+
+            // for(var i = 0; i < langEs.length; i++){
+            //     langEs[i].style.display = "none"; // depending on what you're doing
+            // }
+
+            langEs.forEach(el => {
+                el.style.display = "none";
+            });
+        })();
+
         function scrollAction(section) {
             var element = document.getElementById(section);
             var headerOffset = 70;
@@ -208,6 +266,95 @@
         /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
         function closeNav() {
             document.getElementById("mySidebar").style.width = "0";
+        }
+
+        function toggleLanguageMenu() {
+            var langArrow = document.getElementById('lang-arrow');
+            var langOption = document.getElementById('lang-1');
+            
+            // Open
+            if (langArrow.classList.contains('rotate-0')) {
+                langArrow.classList.remove('rotate-0');
+                langArrow.classList.add('rotate-180');
+                langOption.classList.remove('opacity-0');
+                langOption.classList.add('opacity-1');
+                langOption.classList.add('bottom-0');
+                langOption.classList.remove('bottom-1/4');
+                langOption.classList.remove('-z-10');
+                langOption.classList.add('z-10');
+            }
+            // Close
+            else if (langArrow.classList.contains('rotate-180')) {
+                langArrow.classList.remove('rotate-180');
+                langArrow.classList.add('rotate-0');
+                langOption.classList.add('opacity-0');
+                langOption.classList.remove('opacity-1');
+                langOption.classList.remove('bottom-0');
+                langOption.classList.add('bottom-1/4');
+                langOption.classList.add('-z-10');
+                langOption.classList.remove('z-10');
+            }
+        }
+
+        function toggleLanguageButton() {
+            var activeLang = document.getElementById('lang-active-text');
+            var activeFlag = document.getElementById('lang-active-flag');
+            var disabledLang = document.getElementById('lang-disabled-text');
+            var disabledFlag = document.getElementById('lang-disabled-flag');
+
+            // Cambiamos de EN a ES
+            if (activeLang.innerText === 'ENG') {
+                // Hacemos transicion del boton de ENG -> ESP
+                activeLang.innerText = 'ESP';
+                activeFlag.src = './img/mex-flag.png';
+                disabledLang.innerText = 'ENG';
+                disabledFlag.src = './img/us-flag.png';
+                changeLanguage('es');
+            }
+            // Cambiamos de ES a EN
+            else if (activeLang.innerText === 'ESP') {
+                // Hacemos transicion del boton de ESP -> ENG
+                activeLang.innerText = 'ENG';
+                activeFlag.src = './img/us-flag.png';
+                disabledLang.innerText = 'ESP';
+                disabledFlag.src = './img/mex-flag.png';
+                changeLanguage('en');
+            }
+
+            // Close Button
+            var langArrow = document.getElementById('lang-arrow');
+            var langOption = document.getElementById('lang-1');
+            langArrow.classList.remove('rotate-180');
+            langArrow.classList.add('rotate-0');
+            langOption.classList.add('opacity-0');
+            langOption.classList.remove('opacity-1');
+            langOption.classList.remove('bottom-0');
+            langOption.classList.add('bottom-1/4');
+            langOption.classList.add('-z-10');
+            langOption.classList.remove('z-10');
+        }
+
+        function changeLanguage(changeToLang) {
+            var langEn = document.querySelectorAll('[lang="en"]');
+            var langEs = document.querySelectorAll('[lang="es"]');
+
+            // Si queremos cambiar a ES, primero escondemos los elementos activos EN
+            if (changeToLang === 'es') {
+                langEn.forEach(function (element, i) {
+                    i != 0 ? element.style.display = "none" : "";
+                });
+                langEs.forEach(element => {
+                    element.style.display = "initial";
+                });
+            }
+            else if (changeToLang === 'en') {
+                langEs.forEach(element => {
+                    element.style.display = "none";
+                });
+                langEn.forEach(function (element, i) {
+                    i != 0 ? element.style.display = "initial" : "";
+                });
+            }
         }
     </script>
 </body>
