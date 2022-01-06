@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMex Reciclados - Tracking</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="keywords" content="iMex Reciclados, Reciclaje, Baja California, Tijuana, PET, Cardboard, Paper, Periodico, Aluminio, Plastic, Mexico, México">
+    <meta name="author" content="Luis Diaz Reynoso">
+    <meta name="og:site_name" content="iMex Reciclados">
+    <meta name="og:title" content="Welcome to iMex Reciclados">
+    <meta name="og:description" content="">
+    <meta name="og:image" content="https://www.imexreciclados.com/img/imex-logo.png">
+    <link href="styles.css" rel="stylesheet">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8P9KR1QES"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-S8P9KR1QES');
+    </script>
+</head>
+<body class="font-Poppins font-light">
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 w-full z-20 bg-white-rgb border-b-2 border-imex-blue">
+        <nav class="container mx-auto flex items-center justify-between py-4 text-sm">
+            <img class="cursor-pointer w-1/2 sm:w-1/6 transition-transform active:scale-95" src="./img/imex-logo.png" onclick="goTo('index')" alt="">
+            <div class="hidden sm:flex flex-1 items-center sm:w-5/6 text-slate-500">
+                <div class="w-1/4 flex flex-row justify-center"></div>
+                <ul class="w-3/4 flex flex-1 justify-around items-center">
+                    <li class="cursor-pointer relative flex flex-col gap-1 items-center group" onclick="goTo('index')"> 
+                        <span lang="en">Home</span><span lang="es">Inicio</span>
+                        <div class="absolute -bottom-2 transition-all w-0 group-hover:w-full border-b-2 group-hover:border-imex-green"></div>
+                    </li>
+                    <li class="cursor-pointer relative flex flex-col gap-1 items-center group" onclick="goTo('index')"> 
+                        <span lang="en">Materials</span><span lang="es">Materiales</span>
+                        <div class="absolute -bottom-2 transition-all w-0 group-hover:w-full border-b-2 group-hover:border-imex-green"></div></li>
+                    <li class="cursor-pointer relative flex flex-col gap-1 items-center group" onclick="goTo('index')">
+                        <span lang="en">Network</span><span lang="es">Red de Distribución</span>
+                        <div class="absolute -bottom-2 transition-all w-0 group-hover:w-full border-b-2 group-hover:border-imex-green"></div>
+                    </li>
+                    <li class="cursor-pointer relative flex flex-col gap-1 items-center group" onclick="goTo('index')">
+                        <span lang="en">Contact</span><span lang="es">Contáctanos</span>
+                        <div class="absolute -bottom-2 transition-all w-0 group-hover:w-full border-b-2 group-hover:border-imex-green"></div>
+                    </li>
+                    <li class="cursor-pointer relative flex flex-col gap-1 items-center group">
+                        <span lang="en">Package Tracking</span><span lang="es">Seguimiento de Paquetes</span>
+                        <div class="absolute -bottom-2 transition-all w-0 group-hover:w-full border-b-2 group-hover:border-imex-green"></div>
+                    </li>
+                    <div class="flex flex-col static">
+                        <div onclick="toggleLanguageMenu()" class="flex flex-row justify-center items-center bg-imex-blue shadow rounded-full px-6 py-2 gap-3 cursor-pointer hover:bg-slate-400 hover:text-slate-800 active:scale-105 transition-all">
+                            <img class="w-4" src="./img/us-flag.png" id="lang-active-flag" alt="">
+                            <span id="lang-active-text">ENG</span>
+                            <i class="fas fa-angle-down rotate-0 transition-all" id="lang-arrow"></i>
+                        </div>
+                        <div onclick="toggleLanguageButton()" id="lang-1" class="opacity-0 -z-10 flex absolute bottom-1/4 flex-row justify-center items-center rounded-full px-6 py-2 gap-3 cursor-pointer hover:bg-slate-400 hover:text-slate-800 transition-all">
+                            <img class="w-4" src="./img/mex-flag.png" id="lang-disabled-flag" alt="">
+                            <span id="lang-disabled-text">ESP</span>
+                            <i class="w-4"></i>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <div class="flex sm:hidden flex-1 justify-end">
+                <i class="text-2xl fas fa-bars" onclick="openNav()"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" onclick="closeNav()" class="closebtn text-2xl text-slate-800 font-bold capitalize">&times;</a>
+        <a onclick="goTo('index');closeNav()" class="text-2xl text-slate-800 font-bold capitalize"> <span lang="en">Home</span><span lang="es">Inicio</span> </a>
+        <a onclick="goTo('index');closeNav()" class="text-2xl text-slate-800 font-bold capitalize"> <span lang="en">Materials</span><span lang="es">Materiales</span> </a>
+        <a onclick="goTo('index');closeNav()" class="text-2xl text-slate-800 font-bold capitalize"> <span lang="en">Network</span><span lang="es">Red de Distribución</span> </a>
+        <a onclick="goTo('index');closeNav()" class="text-2xl text-slate-800 font-bold capitalize"> <span lang="en">Contact</span><span lang="es">Contáctanos</span> </a>
+        <a onclick="closeNav()" class="text-2xl text-slate-800 font-bold capitalize"> <span lang="en">Package Tracking</span><span lang="es">Seguimiento de Paquetes</span> </a>
+        <div class="px-7 py-6 flex flex-row static gap-6">
+            <div onclick="changeLanguage('en');closeNav()" class="flex flex-row justify-center items-center bg-sky-100 text-slate-800 shadow-slate-500 shadow-md rounded-full px-6 py-2 gap-3 cursor-pointer hover:bg-slate-400 hover:text-slate-800 active:scale-105 transition-all">
+                <img class="w-4" src="./img/us-flag.png" alt="">
+                <span>ENG</span>
+            </div>
+            <div onclick="changeLanguage('es');closeNav()" class="flex flex-row justify-center items-center bg-sky-100 text-slate-800 shadow-slate-500 shadow-md rounded-full px-6 py-2 gap-3 cursor-pointer hover:bg-slate-400 hover:text-slate-800 active:scale-105 transition-all">
+                <img class="w-4" src="./img/mex-flag.png" alt="">
+                <span>ESP</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Google Sheet - Tracking -->
+    <section class="relative bg-imex-blue h-fit">
+        <div class="container flex flex-col items-center pt-48 pb-24 gap-16">
+            <div class="flex flex-col items-center gap-3">
+                <h2 class="text-3xl text-slate-800 font-bold capitalize text-center">
+                    <span lang="en">Package Tracking</span><span lang="es">Seguimiento de Paquetes</span>
+                </h2>
+                <div class="w-20 border-b-4 border-imex-green"></div>
+            </div>
+            <div class="flex flex-row w-full h-max">
+                <iframe class="w-full h-screen" lang="en" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTtsZ5SLDXR3fWALKdFmfu9FGABNit477m6aHsUrWcMZyr4JKZdSaQlWGiYgrUSjL-fde4u3Sw6A7FB/pubhtml?gid=66596721&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+                <iframe class="w-full h-screen" lang="es" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTtsZ5SLDXR3fWALKdFmfu9FGABNit477m6aHsUrWcMZyr4JKZdSaQlWGiYgrUSjL-fde4u3Sw6A7FB/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-slate-500" id="footer">
+        <div class="container flex flex-1 flex-row justify-center py-3">
+            <h4 class="text-sm text-slate-300">iMex Reciclados © 2022</h4>
+        </div>
+    </footer>
+
+    <script>
+        // self executing function here
+        (function() {
+            var hideOtherLang = document.querySelectorAll('[lang="es"]');
+
+            hideOtherLang.forEach(el => {
+                el.style.display = "none";
+            });
+        })();
+
+        /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "100%";
+        }
+
+        /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+
+        function toggleLanguageMenu() {
+            var langArrow = document.getElementById('lang-arrow');
+            var langOption = document.getElementById('lang-1');
+            
+            // Open
+            if (langArrow.classList.contains('rotate-0')) {
+                langArrow.classList.remove('rotate-0');
+                langArrow.classList.add('rotate-180');
+                langOption.classList.remove('opacity-0');
+                langOption.classList.add('opacity-1');
+                langOption.classList.add('bottom-0');
+                langOption.classList.remove('bottom-1/4');
+                langOption.classList.remove('-z-10');
+                langOption.classList.add('z-10');
+            }
+            // Close
+            else if (langArrow.classList.contains('rotate-180')) {
+                langArrow.classList.remove('rotate-180');
+                langArrow.classList.add('rotate-0');
+                langOption.classList.add('opacity-0');
+                langOption.classList.remove('opacity-1');
+                langOption.classList.remove('bottom-0');
+                langOption.classList.add('bottom-1/4');
+                langOption.classList.add('-z-10');
+                langOption.classList.remove('z-10');
+            }
+        }
+
+        function toggleLanguageButton() {
+            var activeLang = document.getElementById('lang-active-text');
+            var activeFlag = document.getElementById('lang-active-flag');
+            var disabledLang = document.getElementById('lang-disabled-text');
+            var disabledFlag = document.getElementById('lang-disabled-flag');
+
+            // Cambiamos de EN a ES
+            if (activeLang.innerText === 'ENG') {
+                // Hacemos transicion del boton de ENG -> ESP
+                activeLang.innerText = 'ESP';
+                activeFlag.src = './img/mex-flag.png';
+                disabledLang.innerText = 'ENG';
+                disabledFlag.src = './img/us-flag.png';
+                changeLanguage('es');
+            }
+            // Cambiamos de ES a EN
+            else if (activeLang.innerText === 'ESP') {
+                // Hacemos transicion del boton de ESP -> ENG
+                activeLang.innerText = 'ENG';
+                activeFlag.src = './img/us-flag.png';
+                disabledLang.innerText = 'ESP';
+                disabledFlag.src = './img/mex-flag.png';
+                changeLanguage('en');
+            }
+
+            // Close Button
+            var langArrow = document.getElementById('lang-arrow');
+            var langOption = document.getElementById('lang-1');
+            langArrow.classList.remove('rotate-180');
+            langArrow.classList.add('rotate-0');
+            langOption.classList.add('opacity-0');
+            langOption.classList.remove('opacity-1');
+            langOption.classList.remove('bottom-0');
+            langOption.classList.add('bottom-1/4');
+            langOption.classList.add('-z-10');
+            langOption.classList.remove('z-10');
+        }
+
+        function changeLanguage(changeToLang) {
+            var langEn = document.querySelectorAll('[lang="en"]');
+            var langEs = document.querySelectorAll('[lang="es"]');
+
+            // Si queremos cambiar a ES, primero escondemos los elementos activos EN
+            if (changeToLang === 'es') {
+                langEn.forEach(function (element, i) {
+                    element.localName !== "html" ? element.style.display = "none" : "";
+                });
+                langEs.forEach(element => {
+                    element.localName !== "html" ? element.style.display = "initial" : "";
+                });
+            }
+            else if (changeToLang === 'en') {
+                langEs.forEach(element => {
+                    element.localName !== "html" ? element.style.display = "none" : "";
+                });
+                langEn.forEach(function (element, i) {
+                    element.localName !== "html" ? element.style.display = "initial" : "";
+                });
+            }
+        }
+
+        function goTo(docName) {
+            window.location = docName + ".html";
+        }
+    </script>
+</body>
+</html>

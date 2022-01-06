@@ -7,7 +7,9 @@
 .btn-imex-action {
     @apply bg-imex-green text-white rounded-md px-7 py-5 transition-all hover:bg-lime-600;
 }
-
+.btn-imex-action-reverse {
+    @apply bg-white text-imex-green rounded-md px-7 py-5 transition-all hover:bg-slate-200;
+}
 
 /* The sidebar menu */
 .sidebar {
