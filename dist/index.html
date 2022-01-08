@@ -328,7 +328,23 @@
                 return false;
             }
 
-            alert("SUCCESS: Message sent.");
+            let payload = {
+                name,
+                email,
+                phone,
+                message
+            };
+
+            axios.post('https://api.bajaoralcenter.com/imex/email', payload)
+                .then(response => {
+                    console.log(`POST: `, response.data);
+                    alert("SUCCESS: Message sent.");
+                })
+                .catch(error => {
+                    alert("ERROR: Couldn't send message.");
+                    console.error(error);
+                });
+
             return true;
         }
 
@@ -341,7 +357,8 @@
                 .catch(error => console.error(error));
         };
 
-        fetchUsers();
+        // fetchImex();
+        // fetchUsers();
     </script>
     <script>
         // self executing function here
